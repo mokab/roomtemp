@@ -16,7 +16,7 @@ def job():
     sql = """
     insert into 
     temp(datetime, created, temp) 
-    values(datetime(datetime(),"localtime"), "%s", %d);
+    values(datetime(datetime(),"localtime"), "%s", %f);
     """
     connector.execute(sql%(remores['datetime'], remores['temp']))
     connector.commit()
