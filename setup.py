@@ -15,9 +15,14 @@ CREATE TABLE "temp" (
 "temp" REAL
 );
 """
-connector.execute(sql%(remores['datetime'], remores['temp']))
+connector.execute(sql)
 connector.commit()
 connector.close()
+
+stoken = input('Enter the token : ') 
+yml = {'token': '%s'%stoken}
+with open('setting.yml', 'w') as file:
+    yaml.dump(yml, file)
 
 with open('setting.yml') as file:
     stng = yaml.safe_load(file)
