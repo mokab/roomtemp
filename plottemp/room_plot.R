@@ -12,3 +12,12 @@ p <- p + scale_x_datetime(date_breaks = "60 mins",
                           labels = date_format(format = "%d/ %H:%M", 
                                                tz = "Asia/Tokyo"))
 plot(p)
+
+p <- ggplot(res, aes(x = datetime, y = temp))
+p <- p + geom_line()
+p <- p + scale_x_datetime(date_breaks = "1 day",
+                          labels = date_format(format = "%d",
+                                               tz = "Asia/Tokyo"))
+plot(p)
+
+plot(decompose(ts(res$temp, frequency = 24)))
