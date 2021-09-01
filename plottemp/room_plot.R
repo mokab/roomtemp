@@ -23,7 +23,7 @@ plot(p)
 plot(decompose(ts(res$temp, frequency = 24)))
 
 
-p <- ggplot(res[res$datetime > "2021-08-03",], aes(x = datetime, y = temp))
+p <- ggplot(res[res$datetime > "2021-08-23",], aes(x = datetime, y = temp))
 p <- p + geom_line()
 p <- p + scale_x_datetime(date_breaks = "1 day",
                           labels = date_format(format = "%d",
